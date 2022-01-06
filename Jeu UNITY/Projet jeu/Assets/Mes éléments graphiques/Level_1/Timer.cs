@@ -10,6 +10,10 @@ public class Timer : MonoBehaviour
  #region variables
  private float currentTime = 0f;
  private float startingTime = 30f;
+ private int played = 0;
+
+ public AudioSource lose;
+ public AudioSource background;
  public TextMeshProUGUI  timer;
  public GameObject GameOver;
  public GameObject HasWon;
@@ -26,7 +30,7 @@ public class Timer : MonoBehaviour
 
  void Update()
  {
-     
+   
      if(currentTime > 0 && HasWon.active == false && slider.value != 1 && Paused.active == false) 
      {
      currentTime -= 1*Time.deltaTime;
@@ -36,6 +40,9 @@ public class Timer : MonoBehaviour
      {
          Debug.Log("Game Over");
          GameOver.SetActive(true);
+         background.Pause();
+         played ++;
+         if(played ==1) lose.Play();
      }    
      
  }

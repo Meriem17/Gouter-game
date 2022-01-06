@@ -9,6 +9,11 @@ public class CollisionDetect : MonoBehaviour
 
     public AudioSource audioData;
     
+    private int played = 0;
+
+    public AudioSource winsound;
+    public AudioSource background;
+    
     #region vitamines
     public Text B12Score;
     private int B12ScireNb;
@@ -22,6 +27,7 @@ public class CollisionDetect : MonoBehaviour
 
     public Slider slider;
     public GameObject win;
+
     
     #region Animations
     public Animator p1;
@@ -111,6 +117,9 @@ public class CollisionDetect : MonoBehaviour
         yield return new WaitForSeconds(3);
         Debug.Log("waited");
         win.SetActive(true);
+        background.Pause();
+        played ++;
+        if(played == 1) winsound.Play();
     }
     //Incriment Counter when eat Vitamin
     #region On Trigger Enter

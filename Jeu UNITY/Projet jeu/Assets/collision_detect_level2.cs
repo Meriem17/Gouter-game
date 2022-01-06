@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +8,14 @@ using TMPro;
 public class collision_detect_level2 : MonoBehaviour
 {
     public AudioSource hum;
+    public Slider slider;
 
     public TextMeshProUGUI kakiScore;
     private int kakiNb;
 
     public TextMeshProUGUI creamScore;
     private int creamNb;
+
 
 
     void Start()
@@ -54,4 +56,5 @@ public class collision_detect_level2 : MonoBehaviour
         }
     }
     #endregion
+
 }
