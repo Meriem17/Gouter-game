@@ -18,6 +18,8 @@ public class Timer : MonoBehaviour
  public GameObject GameOver;
  public GameObject HasWon;
  public GameObject Paused;
+ public GameObject EditSound;
+ public GameObject instructions;
  public Slider slider;
  #endregion
  
@@ -31,7 +33,7 @@ public class Timer : MonoBehaviour
  void Update()
  {
    
-     if(currentTime > 0 && HasWon.active == false && slider.value != 1 && Paused.active == false) 
+     if(currentTime > 0 && HasWon.active == false && Paused.active == false && EditSound.active == false && instructions.active == false) 
      {
      currentTime -= 1*Time.deltaTime;
      timer.SetText(((int)(currentTime)).ToString()) ;
